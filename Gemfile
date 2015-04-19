@@ -32,7 +32,64 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#customize gem for all enviroments
+
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'devise'
+gem 'bcrypt', '~> 3.1.7'
+
+# Add for upload image
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
+gem "settingslogic"
+
+
+#add for SEO
+gem 'seo_helper', '~> 1.0', :git => 'git://github.com/techbang/seo_helper.git'
+gem 'sitemap_generator'
+
+#fb open graph
+gem 'open_graph_helper', :github => 'techbang/open_graph_helper'
+
+# pagination
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+
+
+# add for sidekiq
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
+
+
+
+
+
+# gem dalli
+
+
 group :development, :test do
+
+    # customize gem
+  gem 'pry'
+  gem 'pry-rails'
+  #gem 'pry-nav'   # Using MRI 2+? Switch to pry-byebug.
+  gem 'pry-byebug'
+
+  gem 'meta_request'
+  gem 'better_errors'
+  gem "binding_of_caller"
+  gem 'guard-livereload'
+  gem 'annotate'
+  gem 'awesome_print', :require => false
+  gem 'hirb', :require => false
+  gem 'hirb-unicode', :require => false
+
+
+  # Rails 4.2 offers below gem
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

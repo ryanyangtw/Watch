@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+
+  #首頁
+  #介紹
+  #加入會員
+  #商品頁
+  #品牌頁
+  
+  root to: "pages#home"
+  get '/about',to: 'pages#about'
+
+  resources :brands, only: :show
+  resources :products, only: :show
+  resources :subscribers, only: [:new, :create]
+
+  
+  namespace :admin do  
+    get "/" => "administrators#new_session"
+    post "/" => "administrators#create_session"
+    delete "/" => "administrators#destroy_session"
+
+    resources :brands do
+      resources :products
+    end
+    resources :subscribers
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
