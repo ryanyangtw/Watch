@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     delete "/" => "administrators#destroy_session"
 
     resources :brands do
-      resources :products
+      resources :products, shallow: true
     end
     resources :subscribers
   end

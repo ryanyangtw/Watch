@@ -1,0 +1,44 @@
+
+<h2> 品牌: <%= @brand.title %> </h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增商品", new_admin_brand_product_path(@brand), :class => "btn btn-info btn-lg") %>
+  <%= link_to("修改品牌", edit_admin_brand_path, :class => "btn btn-primary btn-lg") %>
+  <%= link_to('刪除品牌', admin_brand_path(@brand), class: "btn btn-danger btn-lg", method: :delete, 'data-confirm': "確定要刪除品牌嗎?") %>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product title</th>
+      <th>Product Photo</th>
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brand.products.each do |product| %>
+    <tr>
+      <td> 
+        <%= product.id %>
+      </td>
+
+      <td>
+        <h3><%= link_to( product.title , admin_product_path(product) )%></h3>   
+      </td>
+      <td>   
+      <%=link_to admin_product_path(product) do%>     
+        <%= image_tag(product.display_photo.image, size: "200") %>
+      <%end%>    
+      </td>
+      
+      <td> <%= link_to("修改", edit_admin_product_path(product), class: "btn btn-warning btn-lg") %> </td>
+      <td> <%= link_to("刪除", admin_product_path(product), class: "btn btn-danger btn-lg", method: :delete, 'data-confirm': "確定要刪除商品嗎?" ) %> </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+

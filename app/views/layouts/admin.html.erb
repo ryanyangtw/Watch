@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Watch</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <%#= render "common/navbar" %>
+
+    <%= render partial: 'layouts/messages' %>
+    
+    <div class="row">
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+
+          <li> 
+            <%= link_to("Admin Panel", admin_path) %> 
+          </li>
+          <hr>
+
+          <li> 
+            <%= link_to("新增品牌", new_admin_brand_path) %> 
+          </li>
+          <hr>
+
+          <li> 
+            <%= link_to("品牌", "#") %> 
+  
+            <% Brand.all.each do |brand|%>
+
+              <ol> <%= link_to(brand.title, admin_brand_path(brand)) %> </ol>
+            <% end %>
+          </li>
+          <hr>
+
+          <li> <%= link_to("訂閱者", admin_subscribers_path) %> 
+          </li>
+          <hr>
+
+          <li class="li-sign_out">
+            <%= link_to('登出', admin_path, method: :delete) if logged_in? %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-offset-1 col-md-9 well">
+        <%= yield %>
+      </div>
+      
+    </div>
+  </div>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+
+</body>
+</html>

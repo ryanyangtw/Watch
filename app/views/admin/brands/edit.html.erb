@@ -1,0 +1,18 @@
+<div class="">
+  <h1>Edit Brand</h1>
+
+  <%= render partial: 'shared/errors', locals: {obj: @brand} %>
+
+  <%= simple_nested_form_for @brand, html: { multipart: true }, :url => admin_brand_path(@brand) do |f| %>
+
+  <%= render(:partial=>'form', :locals=>{:f=>f})%>
+ 
+  
+  <div class="form-group">
+    <%= f.submit '修改', class: "btn btn-primary btn-lg" %>
+
+    <%= link_to('刪除', admin_brand_path(@brand), class: "btn btn-danger", method: :delete, 'data-confirm': "確定要刪除品牌嗎?") %>
+  </div>
+
+  <% end %>
+</div>

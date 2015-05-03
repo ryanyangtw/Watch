@@ -6,8 +6,9 @@ class Admin::AdministratorsController < AdminController
     if logged_in?
       redirect_to admin_brands_path
     else
-      render 'admin/administrators/sign_in'
+      render 'admin/administrators/sign_in', layout: "application"
     end
+
   end
 
   def create_session
@@ -18,7 +19,7 @@ class Admin::AdministratorsController < AdminController
       flash[:notice] = "成功登入"
       redirect_to admin_brands_path
     else
-      flash[:error] = "Sorry, something is wrong"
+      flash[:error] = "帳號密碼輸入錯誤"
       redirect_to admin_path
     end
   end

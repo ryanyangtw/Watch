@@ -1,2 +1,8 @@
-<h1>Hello admin</h1>
-<%= link_to('Sign out', admin_path, method: :delete) %>
+<h1>Admin panel</h1>
+<hr>
+
+<%= link_to("新增品牌", new_admin_brand_path, class: "btn btn-lg btn-info") %>
+
+
+<%= link_to("登出", admin_path, class: "btn btn-lg btn-warning") %>
+

@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-  #layout "admin"
+  layout "admin"
 
   #before_action :authenticate_administrator!
   #before_action :admin_required, :except => [:new_session, :create_session]

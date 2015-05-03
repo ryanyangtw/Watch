@@ -65,7 +65,15 @@ gem 'sinatra', require: false
 gem 'slim'
 
 
+# Simpe form
+gem 'simple_form', '~> 3.0.2'
 
+# Add multiple photos
+gem "nested_form"
+
+
+# mailchimp
+gem 'gibbon'
 
 
 # gem dalli

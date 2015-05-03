@@ -1,0 +1,59 @@
+
+
+  <%= f.input :title, :input_html=>{:class => "fuck form-control"}, :wrapper_html=>{ :class => "form-group"} ,:label => "名稱" , :type=>"text"%>
+
+
+  <%= f.input :description, :input_html=>{:class =>"form-control", :rows=>"8"}, :wrapper_html=>{:class=>"form-group"}, :label=>"商品描述"%>
+
+
+  <hr>
+
+  <h2>上傳產品展示圖片</h2>
+
+
+    <%= f.fields_for :display_photo, @product.display_photo  do |photo_form|%>
+
+        <div class="nested-fields form-inline form-img-box">
+      </br>
+        <%= photo_form.input :image, :input_html=>{:class=>"form-control"}, :wrapper_html=>{:class=>"form-group"}, :label=>"上傳圖片"%>
+
+
+        <%if !photo_form.object.image.nil?%>
+             <%= image_tag(photo_form.object.image, :class=>"img-rounded")%>
+        <%end%>
+
+
+        <%#= photo_form.link_to_remove("Remove this photo", :class=>'btn btn-lg btn-danger') %>
+      </div>
+    <%end%>
+    <%#= f.link_to_add "增加圖片", :display_photo, :class=>'btn btn-lg btn-info' %>
+
+  
+  <hr>
+
+  <h2>上傳產品內頁大圖</h2>
+
+
+    <%= f.fields_for :banners, @product.banners do |photo_form|%>
+<!-- .order(id: :asc) -->
+      <div class="nested-fields form-inline form-img-box">
+        </br>
+        <%=photo_form.input :image, :input_html=>{:class=>"form-control"}, :wrapper_html=>{:class=>"form-group"}, :label=>"上傳圖片"%>
+
+        <%if !photo_form.object.image.nil?%>
+             <%= image_tag(photo_form.object.image, :class=>"img-rounded")%>
+        <%end%>
+
+
+        <%= photo_form.link_to_remove("Remove this photo", :class=>'btn btn-lg btn-danger') %>
+      </div>
+    <%end%>
+        <%= f.link_to_add "增加圖片", :banners, :class=>'btn btn-lg btn-info'  %>
+
+
+
+ 
+  <hr>
+
+
+

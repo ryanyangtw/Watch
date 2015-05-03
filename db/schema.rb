@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419095249) do
+ActiveRecord::Schema.define(version: 20150503091235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,21 +23,52 @@ ActiveRecord::Schema.define(version: 20150419095249) do
     t.string   "password_digest"
   end
 
+  create_table "banners", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "banners", ["imageable_id"], name: "index_banners_on_imageable_id", using: :btree
+
   create_table "brands", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "slug"
+  end
+
+  create_table "display_photos", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "display_photos", ["imageable_id"], name: "index_display_photos_on_imageable_id", using: :btree
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.boolean  "large",          default: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
-    t.text     "desctiption"
+    t.text     "description"
     t.integer  "price"
     t.string   "video_url"
     t.integer  "brand_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "slug"
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
