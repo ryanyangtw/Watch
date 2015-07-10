@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Watch</title>
+  <title>Watch180</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= render partial: 'layouts/messages' %>
 
-
+<%= render partial: 'shared/header' %>
 <%= yield %>
+<%= render partial: 'shared/footer' %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 
 </body>
 </html>

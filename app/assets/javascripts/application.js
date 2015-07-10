@@ -12,8 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-// require_tree .
-
 //= require bootstrap-sprockets
+//= require js/jquery.tinyMap.js
+//= require js/jquery.tinyMap.min.js
+//= require js/slidershow.js
+//= require js/slideshow-m.js
+//= require js/gototop.js
 //= require jquery_nested_form
+
+
+// require turbolinks
+// require_tree .

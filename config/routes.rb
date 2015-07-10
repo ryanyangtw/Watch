@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   
   root to: "pages#home"
   get '/about',to: 'pages#about'
+  get '/contact', to: 'pages#contact'
 
-  resources :brands, only: :show
+  resources :brands, only: [:show, :index]
   resources :products, only: :show
   resources :subscribers, only: [:new, :create]
 
