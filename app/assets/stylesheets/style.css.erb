@@ -101,13 +101,13 @@ ul li a b2 {
 
 .bg-home {
     /*background: url('../img/bg.png')no-repeat center center;*/
-    background: url(asset_path("bg.png"))no-repeat center center;
+    background: url(<%= asset_path("bg.png") %>)no-repeat center center;
     width: 100%;
 }
 
 .bg-home-m {
     /*background: url('../img/bg3.png')no-repeat center center;*/
-    background: url(asset_path("bg3.png"))no-repeat center center;
+    background: url(<%= asset_path("bg3.png") %>)no-repeat center center;
     width: 100%;
 }
 
@@ -178,17 +178,19 @@ body {
 }
 
 .brand-list a ul {
-    background: url("../img/home02c.png")no-repeat;
-    background-position: left top;
+    background: url(<%= asset_path('home02c.png') %>)no-repeat;
+    /*background: url("../img/home02c.png")no-repeat;*/
+    padding-left:27px;
     color: black;
     height: 30px;
-    width: 160px;
+    width: 300px;
 }
 
 .brand-list a ul li {}
 
 .brand-list a ul:hover {
-    background: url("../img/home02y.png")no-repeat;
+    background: url(<%= asset_path('home02y.png') %>)no-repeat;
+    /*background: url("../img/home02y.png")no-repeat;*/
     background-position: left top;
     color: #CD9D42;
     text-decoration: none;
@@ -254,12 +256,14 @@ body {
 /* 品牌頁面 */
 
 .bg-brand {
-    background: url('../img/brand04.png')no-repeat center center;
+    background: url(<%= asset_path("brand04.png") %>) no-repeat center center;
+    /*background: url('../img/brand04.png')no-repeat center center;*/
     width: 100%;
 }
 
 .bg-brand-m {
-    background: url('../img/brand04_m.png')no-repeat center center;
+    background: url(<%= asset_path("brand04_m.png") %>) no-repeat center center;
+    /*background: url('../img/brand04_m.png')no-repeat center center;*/
     width: 100%;
 }
 
@@ -364,7 +368,8 @@ body {
 }
 
 .bg-about1 {
-    background: url('../img/about01.png')no-repeat center center;
+    background: url(<%= asset_path("about01.png") %>) no-repeat center center;
+    /*background: url('../img/about01.png')no-repeat center center;*/
     background-position: left top;
 }
 
@@ -663,3 +668,22 @@ body {
   width:100%;
   text-align: center;
 } 
+
+.pic {
+    width:262px;
+    height: 396px;
+    overflow: hidden;
+
+}
+.pic img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.brand_list > li {
+    padding-left:0px;
+}
+
+
+

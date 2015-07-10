@@ -1,6 +1,8 @@
 
 
-  <%= f.input :title, :input_html=>{:class => "form-control"}, :wrapper_html=>{ :class => "form-group"} ,:label => "名稱" , :type=>"text"%>
+  <%= f.input :title, :input_html=>{:class => "form-control"}, :wrapper_html=>{ :class => "form-group"} ,:label => "英文名稱(必填)" , :type=>"text"%>
+
+  <%= f.input :chinese_title, :input_html=>{:class => "form-control"}, :wrapper_html=>{ :class => "form-group"} ,:label => "中文名稱" , :type=>"text"%>
 
 
   <%= f.input :description, :input_html=>{:class =>"form-control", :rows=>"8"}, :wrapper_html=>{:class=>"form-group"}, :label=>"品牌描述"%>

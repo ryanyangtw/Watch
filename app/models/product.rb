@@ -13,4 +13,15 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :display_photo, :reject_if => :all_blank, allow_destroy: true
 
   sluggable_column :title
+
+
+
+  before_save :convert_youtube_url
+
+  def convert_youtube_url 
+    if self.video_url?
+      self.video_url = VideoInfo.new(self.video_url).embed_url
+    end
+  end
+
 end

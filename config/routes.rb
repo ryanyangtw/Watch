@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :brands do
       resources :products, shallow: true
     end
-    resources :subscribers
+    resources :subscribers, only: [:index, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

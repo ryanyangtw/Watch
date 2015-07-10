@@ -1,0 +1,64 @@
+ <!-- 精選品牌列表  -->
+<div class="container brand-contain " id="brand">
+    <div class="col-md-12 inline brain-title">
+        <div class="col-md-1 col-xs-2">
+          <%= image_tag('brand01.png') %>
+            <!-- <img src="img/brand01.png"> -->
+        </div>
+        <div class="col-md-8 title col-xs-12 hidden-xs  ">
+            <h3><strong>BRAND 精選品牌</strong></h3>
+            <p>||</p>
+            <h4 style="color:#B79A77"> <%= @brand.title %> <%= @brand.chinese_title %> </h4>
+        </div>
+        <div class="col-md-8 title col-xs-8 visible-xs down-xs  text-left">
+            <h4><strong>BRAND 精選品牌</strong></h4>
+        </div>
+        <div class="col-xs-8   down-xs  visible-xs text-left">
+            <h5 style="color:#B79A77"> <%= @brand.title %> <%= @brand.chinese_title %></h5>
+        </div>
+    </div>
+
+    <% @brand.products.order(id: :desc).each do |product| %>
+      <div class="col-md-3 col-md-offset-1  down-xl">
+        <div class="pic">
+          <%= image_tag(product.display_photo.try(:image_url)) %>
+        </div>
+        <%= link_to(product_path(product)) do %>
+          <h4 class="down-sm right-sm"> <%= product.title %> </h4>
+        <% end %>
+        <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
+        <h5 class="right-sm">#<%= product.number %></h5>
+      </div>
+    <% end %>
+
+    <!-- <div class="col-md-3 col-md-offset-1  down-xl">
+        <img src="img/home03.png">
+        <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a>
+        <h5 class="right-sm">#9262</h5>
+    </div>
+    <div class="col-md-3 col-md-offset-1   down-xl">
+        <img src="img/home03.png">
+        <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a>
+        <h5 class="right-sm">#9262</h5>
+    </div>
+    <div class="col-md-3 col-md-offset-1  down-xl">
+        <img src="img/home03.png">
+        <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a>
+        <h5 class="right-sm">#9262</h5>
+    </div>
+    <div class="col-md-3 col-md-offset-1  down-xl">
+        <img src="img/home03.png">
+        <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a>
+        <h5 class="right-sm">#9262</h5>
+    </div>
+    <div class="col-md-3 col-md-offset-1   down-xl">
+        <img src="img/home03.png">
+        <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a>
+        <h5 class="right-sm">#9262</h5>
+    </div>
+    <div class="col-md-3 col-md-offset-1  down-xl">
+        <img src="img/home03.png">
+        <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a>
+        <h5 class=" right-sm">#9262</h5>
+    </div> -->
+</div>

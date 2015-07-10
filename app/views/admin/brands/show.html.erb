@@ -29,7 +29,7 @@
       </td>
       <td>   
       <%=link_to admin_product_path(product) do%>     
-        <%= image_tag(product.display_photo.image, size: "200") %>
+        <%= image_tag(product.display_photo.try(:image_url), size: "200") %>
       <%end%>    
       </td>
       

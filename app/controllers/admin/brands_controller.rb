@@ -61,7 +61,7 @@ class Admin::BrandsController < AdminController
   end
 
   def brand_params
-    params.require(:brand).permit(:title, :description, :banners_attributes => [:id, :image, :_destroy], :display_photo_attributes => [:id, :image, :_destroy])
+    params.require(:brand).permit(:chinese_title, :title, :description, :banners_attributes => [:id, :image, :_destroy], :display_photo_attributes => [:id, :image, :_destroy])
   end
 
 

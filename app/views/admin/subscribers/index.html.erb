@@ -1,0 +1,50 @@
+<span style="font-size: 32px;">管理訂閱者</span> <span>(依照註冊)</span> <span>(藍色表示今天註冊的使用者)</span>
+
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="col-md-12 well">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Email</th>
+          <th>姓名</th>
+          <th>手機</th>
+          <th>line</th>
+          <th>刪除</th>
+
+        </tr>
+      </thead>
+  
+      <tbody>
+
+          <%@subscribers.each do |subscriber|%>
+            <%if subscriber.created_today?%>
+              <tr class="info">
+            <% else %>
+              <tr>
+            <% end %>
+  
+              <td><%= subscriber.id %></td>
+              <td><%= subscriber.email %> </td>
+              <td><%= subscriber.name %></td>
+              <td><%= subscriber.phone_number %></td>
+              <td><%= subscriber.line %></td>
+     
+              <td><%= link_to('刪除', admin_subscriber_path(subscriber), :method => :delete, :class=>'btn btn-danger btn-sm', data: { confirm: "確定要刪除該名訂閱者？" }) %></td>
+            </tr>
+          
+          <%end%> 
+
+      </tbody>
+
+
+    </table>
+  </div>
+</div>
+
+<div style="text-align: center;">
+<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</div>

@@ -40,8 +40,8 @@ gem 'devise'
 gem 'bcrypt', '~> 3.1.7'
 
 # Add for upload image
-gem 'carrierwave'
-gem 'fog'
+gem 'carrierwave', "~> 0.10.0"
+gem 'carrierwave-aws'
 gem 'mini_magick'
 gem "settingslogic"
 
@@ -75,8 +75,20 @@ gem "nested_form"
 # mailchimp
 gem 'gibbon'
 
+gem 'video_info'
+
+gem "figaro"
 
 # gem dalli
+
+group :staging, :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+  gem 'rack-timeout'
+
+  gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+
+end
 
 
 group :development, :test do

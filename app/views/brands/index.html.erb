@@ -1,0 +1,108 @@
+<!-- ------------------- -->
+    <!--品牌大圖 -->
+    <div class="bg-brand hidden-xs">
+        <div class="container" style="height:1000px;">
+            <div class="col-md-2 col-md-offset-5 col-xs-4 col-xs-offset-4 text-center">
+            </div>
+        </div>
+    </div>
+    <div class="bg-brand-m visible-xs">
+        <div class="container" style="height:600px;">
+            <div class="col-md-2 col-md-offset-5 col-xs-4 col-xs-offset-4 text-center">
+            </div>
+        </div>
+    </div>
+    <!-- 品牌精選 -->
+    <div class="container" id="brand">
+        <div class="col-md-4 col-md-offset-4 text-center">
+          <%= image_tag("home01.png", class: "home01") %>
+            <!-- <img src="img/home01.png" class="home01"> -->
+        </div>
+        <div class="col-md-11 col-md-offset-1 brand-list">
+
+            <% @brands.each_with_index do |brand| %>
+              <%= link_to(brand_path(brand)) do %>
+                <div class="col-md-4   col-xs-6 ">
+                  <ul class="list-inline brand_list">
+                    <li></li>
+                    <li class=" underline "> <%= brand.title %> </li>
+                    <li><%= brand.chinese_title %></li>
+                  </ul>
+                </div>
+              <% end %>
+            <% end %>
+
+
+            <!-- <div class="col-md-4 text-center  col-xs-6 ">
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+            </div>
+
+            <div class="col-md-4 text-center col-xs-6 ">
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="col-md-4 text-center col-xs-6 ">
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+                <a href="item-list.html">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li class="underline">ROLEX</li>
+                        <li>勞力士</li>
+                    </ul>
+                </a>
+            </div> -->
+            <div style="height:500px;"></div>
+        </div>
+    </div>

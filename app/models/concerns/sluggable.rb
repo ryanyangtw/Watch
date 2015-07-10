@@ -33,7 +33,8 @@ module Sluggable
 
   def to_slug(title)
     str = title.strip
-    str.gsub! /\s*[^A-Za-z0-9]\s*/, '-'
+    # \p{Han} will matcch all chinese characters
+    str.gsub! /\s*[^A-Za-z0-9\p{Han}]\s*/, '-'
     str.gsub! /-+/, "-"
     str.downcase
   end

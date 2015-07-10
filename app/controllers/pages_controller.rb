@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    
+    @products = Product.order(id: :desc).limit(6)
   end
 
 
@@ -10,5 +10,5 @@ class PagesController < ApplicationController
 
   def contact
   end
-  
+
 end

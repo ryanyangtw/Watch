@@ -1,0 +1,85 @@
+<!-- 內容-->
+<div class="container down-lg ">
+    <div class="col-md-4 col-xs-12">
+
+        <%= render partial: 'shared/errors', locals: {obj: @subscriber} %>
+        <!-- 表單 -->
+        <div class="col-md-10 ">
+            <h2></h2>
+            <h2>加入會員 <small class="subtitle">  Join Member</small></h2>
+        </div>
+
+        <%= form_for(@subscriber, html: { class: "form-inline"} ) do |f| %>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">姓名</div>
+              <%= f.text_field(:name, class: "form-control", placeholder: "") %>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">LINE帳號</div>
+              <%= f.text_field(:line, class: "form-control", placeholder: "") %>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">手機</div>
+              <%= f.text_field(:phone_number, class: "form-control", placeholder: "") %>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">信箱(必填)</div>
+              <%= f.text_field(:email, class: "form-control" , placeholder: "") %>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1">
+              <%= f.submit("加入會員", class: "btn btn-primary", style: "font-size:30px; color:white;") %>
+              <!-- <button type="submit" class="btn btn-primary">
+              <h2 style="color:white;">加入會員</h2></button> -->
+            </div>
+          </div>
+        <% end %>
+         <!-- <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">姓名</div>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">LINE帳號</div>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">手機</div>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">信箱</div>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <button type="submit" class="btn btn-primary">
+                        <h2 style="color:white;">加入會員</h2></button>
+                </div>
+        </form> --> 
+    </div>
+
+    <div class="col-md-8 col-xs-12">
+        <div class="col-md-6 text-center down-md">
+          <%= image_tag('home06.png', class: "img-responsive col-md-12") %>
+            <!-- <img src="img/home06.png" class="img-responsive col-md-12 "> -->
+          </br>
+          <%= image_tag('contact02s.png', class: "img-responsive col-md-12") %>
+            <!-- <img src="img/contact02s.png" class="img-responsive col-md-12 "> -->
+        </div>
+        <div class="col-md-6 text-left">
+          <%= image_tag('contact01.png', class: "img-responsive col-md-12") %>
+            <!-- <img src="img/contact01.png" class="img-responsive "> -->
+        </div>
+        <div class="row text-left down-xs">
+          <%= image_tag('contact03.png', class: "img-responsive col-md-12") %>
+            <!-- <img src="img/contact03.png" class="img-responsive"> -->
+        </div>
+    </div>
+    <div class="col-md-12 col-xs-12 " style="height:70px;">
+    </div>
+</div>
