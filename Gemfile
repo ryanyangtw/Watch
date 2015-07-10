@@ -79,13 +79,13 @@ gem 'video_info'
 
 gem "figaro"
 
+
 # gem dalli
 
-group :staging, :production do
+group :production do
   gem 'rails_12factor'
-  gem 'unicorn'
   gem 'rack-timeout'
-
+  gem 'unicorn'
   gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 end
