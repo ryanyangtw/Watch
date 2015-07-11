@@ -6,7 +6,7 @@ class Subscriber < ActiveRecord::Base
 
 
   def subscribe
-    @list_id = "ad841c87fa"
+    @list_id = ENV['MAILCHIMP_LIST_ID']
     gb = Gibbon::API.new
     
     gb.lists.subscribe({
