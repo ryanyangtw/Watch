@@ -19,10 +19,10 @@
     </div>
 
     <% @brand.products.order(id: :desc).each do |product| %>
-      <div class="col-md-3 col-md-offset-1  down-xl">
-        <div class="pic">
-          <%= image_tag(product.display_photo.try(:image_url)) %>
-        </div>
+      <div class="col-md-4 down-xl">
+        <!--<div class="pic"> -->
+          <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+        <!--</div> -->
         <%= link_to(product_path(product)) do %>
           <h4 class="down-sm right-sm"> <%= product.title %> </h4>
         <% end %>
