@@ -16,12 +16,16 @@ class Product < ActiveRecord::Base
 
 
 
-  before_save :convert_youtube_url
+  # before_save :convert_youtube_url
 
-  def convert_youtube_url 
-    if self.video_url?
-      self.video_url = VideoInfo.new(self.video_url).embed_url
-    end
+  # def convert_youtube_url 
+  #   if self.video_url?
+  #     self.video_url = VideoInfo.new(self.video_url).embed_url
+  #   end
+  # end
+
+  def youtube_embed_url
+    VideoInfo.new(self.video_url).embed_url if self.video_url?
   end
 
 end
