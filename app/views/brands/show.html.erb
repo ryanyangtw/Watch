@@ -18,18 +18,31 @@
         </div>
     </div>
 
-    <% @brand.products.order(id: :desc).each do |product| %>
-      <div class="col-md-4 down-xl">
-        <!--<div class="pic"> -->
-          <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
-        <!--</div> -->
-        <%= link_to(product_path(product)) do %>
-          <h4 class="down-sm right-sm"> <%= product.title %> </h4>
-        <% end %>
-        <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
-        <h5 class="right-sm">#<%= product.number %></h5>
-      </div>
+    <% @products.each_with_index do |product, index| %>
+      <% if(index%3 == 0)%>
+          <div class="row">
+      <% end %>
+        <div class="col-md-4 down-xl">
+          <!--<div class="pic"> -->
+            <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+          <!--</div> -->
+          <%= link_to(product_path(product)) do %>
+            <h4 class="down-sm right-sm"> <%= product.title %> </h4>
+          <% end %>
+          <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
+          <h5 class="right-sm">#<%= product.number %></h5>
+        </div>
+      
+      <% if(index%3 == 2 || index == @products.size - 1)%>
+        </div>
+      <% end %>
+
     <% end %>
+
+
+    <div style = "text-align:center;">
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+    </div>
 
     <!-- <div class="col-md-3 col-md-offset-1  down-xl">
         <img src="img/home03.png">

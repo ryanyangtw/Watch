@@ -6,6 +6,7 @@ class BrandsController < ApplicationController
   end
 
   def show
+    @products = @brand.products.order(id: :desc).paginate(:page => params[:page], :per_page => 15)
   end
 
 
