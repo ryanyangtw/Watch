@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710114237) do
+ActiveRecord::Schema.define(version: 20150826123416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20150710114237) do
     t.integer  "price"
     t.string   "video_url"
     t.integer  "brand_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "slug"
     t.string   "number"
     t.string   "status"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150710114237) do
     t.string   "face"
     t.string   "function"
     t.string   "strap"
+    t.string   "other",       default: "", null: false
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree

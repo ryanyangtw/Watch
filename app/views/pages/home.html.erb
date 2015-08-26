@@ -53,11 +53,11 @@
 
         <% @products.each do |product| %>
           <div class="col-md-4 down-xl">
-          <!--<div class="pic"> -->
-            <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
-            <!-- </div> -->
-              <!-- <img src="img/home03.png"> -->
               <%= link_to(product_path(product)) do %>
+          <div class="pic"> 
+            <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+            </div> 
+              <!-- <img src="img/home03.png"> -->
                 <h4 class="down-sm right-sm "> <%= product.title %> </h4>
               <% end %>
               <!-- <a href="detail.html"><h4 class="down-sm right-sm "> <%= product.title %> </h4>
