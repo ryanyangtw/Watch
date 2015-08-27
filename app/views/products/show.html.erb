@@ -88,17 +88,17 @@
                     </tr>
                   <% end %>
 
-                  <% if @product.price? %>
-                    <tr>
-                        <td class="column">售價：</td>
-                        <td> <%= @product.price %> </td>
-                    </tr>
-                  <% end %>
-
                   <% if @product.other? %>
                     <tr>
                         <td class="column">其他：</td>
                         <td> <%= @product.other %> </td>
+                    </tr>
+                  <% end %>
+
+                  <% if @product.price? %>
+                    <tr>
+                        <td class="column">售價：</td>
+                        <td> <%= @product.price %> </td>
                     </tr>
                   <% end %>
 
