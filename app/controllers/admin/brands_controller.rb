@@ -4,10 +4,11 @@ class Admin::BrandsController < AdminController
 
 
   def index
-    @brands = Brand.order(created_at: :asc) #.paginate(page: params[:page], per_page: 20)
+    @brands = Brand.order(id: :asc) #.paginate(page: params[:page], per_page: 20)
   end
 
   def show
+    @products = @brand.products.order(id: :asc)
   end
 
   def new
