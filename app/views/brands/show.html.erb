@@ -22,12 +22,25 @@
       <% if(index%3 == 0)%>
           <div class="row">
       <% end %>
-        <div class="col-md-4 down-xl">
-          <div class="pic"> 
-            <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
-          </div> 
+        <div class="col-md-4 down-xl hidden-xs">
           <%= link_to(product_path(product)) do %>
+            <div class="pic"> 
+              <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+            </div> 
             <h4 class="down-sm right-sm"> <%= product.title %> </h4>
+          <% end %>
+          <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
+          <h5 class="right-sm">#<%= product.number %></h5>
+        </div>
+
+         <div class="col-xs-12 down-xl visible-xs">
+          <%= link_to(product_path(product)) do %>
+            <div class="phone_pic"> 
+              <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+            </div> 
+            <h4 class="down-sm right-sm"> <%= product.title %> </h4>
+
+            
           <% end %>
           <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
           <h5 class="right-sm">#<%= product.number %></h5>
