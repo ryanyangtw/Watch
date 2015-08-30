@@ -79,6 +79,7 @@ gem 'video_info'
 
 gem "figaro"
 
+gem 'ransack'
 
 # gem dalli
 

@@ -24,6 +24,9 @@ Rails.application.routes.draw do
       resources :products, shallow: true
     end
     resources :subscribers, only: [:index, :destroy]
+
+    get 'pages/search'
+    post 'products/search'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

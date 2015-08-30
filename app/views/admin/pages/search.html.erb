@@ -1,0 +1,21 @@
+
+<div class="pull-right">
+<% @q = Product.ransack(params[:q])%>
+<%= render :partial=>'shared/ransack_form', :locals=>{:q => @q}%>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>商品編號</th>
+      <th>Product title</th>
+      <th>Product Photo</th>
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'admin/products/product', collection: @products, as: :product %>
+  </tbody>
+</table>

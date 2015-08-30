@@ -55,6 +55,13 @@ class Admin::ProductsController < AdminController
   end
 
 
+
+  def search
+    @q = Product.ransack(params[:q]) 
+    @products = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 30 )
+    render 'admin/pages/search'
+  end
+
   private
 
   def find_brand
