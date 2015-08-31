@@ -41,14 +41,9 @@
                 <div id="Fader" class="fader-d">
   
                     <% @product.banners.order(id: :asc).each do |banner| %>
-                      
+                        <%= image_tag(banner.image_url)%>
                     <% end %>
-                    <%#= image_tag("home03.png", class: "slide img-responsive") %>
-                    <%#= image_tag("contact01.png", class: "slide img-responsive") %>
-                    <%#= image_tag("home03.png", class: "slide img-responsive") %>
-                    <%#= image_tag("home03.png", class: "slide img-responsive") %>
-                    <%#= image_tag("home03.png", class: "slide img-responsive") %>
-                    <%#= image_tag("home03.png", class: "slide img-responsive") %>
+
                     <div class="fader_controls text-center hidden-xs">
                         <ul class="pager_list "></ul>
                     </div>
