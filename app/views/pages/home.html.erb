@@ -31,7 +31,7 @@
             
         </div>-->
 <!-- 新進商品 -->
-<div class="container-fluid brand-contain  " style="" id="brand">
+<div class="container-fluid brand-contain hidden-xs  " style="" id="brand">
     <div class="container">
         <div class="col-md-12 inline brain-title">
             <div class="col-md-1 col-xs-2">
@@ -69,6 +69,104 @@
             </div>
 
             <div class="col-md-12 down-xl visible-xs">
+                <%= link_to(product_path(product)) do %>
+                  <div class="phone_pic"> 
+                    <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+                  </div> 
+                  <!-- <img src="img/home03.png"> -->
+                  <h4 class="down-sm right-sm "> <%= product.title %> </h4>
+                <% end %>
+                <!-- <a href="detail.html"><h4 class="down-sm right-sm "> <%= product.title %> </h4>
+                        </a> -->
+                <h5 class="right-sm">#<%= product.number %> </h5>
+            </div>
+
+          <% if(index%3 == 2 || index == @products.size - 1)%>
+            </div>
+          <% end %>
+        <% end %>
+
+        <div style = "text-align:center;">
+          <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+        </div>
+        
+        <!-- <div class="col-md-3 col-md-offset-1  down-xl">
+          <%#= image_tag('home03.png') %>
+            <a href="detail.html"><h4 class="down-sm right-sm ">六月最新商品商品</h4>
+                    </a>
+            <h5 class="right-sm">#9262</h5>
+        </div>
+        <div class="col-md-3 col-md-offset-1   down-xl">
+          <%#= image_tag('home03.png') %>
+            <a href="detail.html"><h4 class="down-sm right-sm ">六月最新商品商品</h4>
+                    </a>
+            <h5 class="right-sm">#9262</h5>
+        </div>
+        <div class="col-md-3 col-md-offset-1  down-xl">
+          <%#= image_tag('home03.png') %>
+            <a href="detail.html"><h4 class="down-sm right-sm ">六月最新商品商品</h4>
+                    </a>
+            <h5 class="right-sm">#9262</h5>
+        </div>
+        <div class="col-md-3 col-md-offset-1  down-xl">
+          <%#= image_tag('home03.png') %>  
+            <a href="detail.html"><h4 class="down-sm right-sm ">六月最新商品商品</h4>
+                    </a>
+            <h5 class="right-sm">#9262</h5>
+        </div>
+        <div class="col-md-3 col-md-offset-1   down-xl">
+           <%#= image_tag('home03.png') %> 
+            <a href="detail.html"><h4 class="down-sm right-sm ">六月最新商品商品</h4>
+                    </a>
+            <h5 class="right-sm">#9262</h5>
+        </div>
+        <div class="col-md-3 col-md-offset-1  down-xl">
+          <%#= image_tag('home03.png') %> 
+            <a href="detail.html"><h4 class="down-sm right-sm ">六月最新商品商品</h4>
+                    </a>
+            <h5 class=" right-sm">#9262</h5>
+        </div> -->
+    </div>
+</div>
+
+<div class="container-fluid phone-brand-contain visible-xs  " style="" id="brand">
+    <div class="container">
+        <div class="col-md-12 inline brain-title">
+            <div class="col-md-1 col-xs-2">
+              <%= image_tag('brand01.png') %>
+              <!-- <img src="img/brand01.png"> -->
+            </div>
+            <div class="col-md-8 title col-xs-12 hidden-xs  ">
+                <h3><strong>New 最近更新</strong></h3>
+                <p>||</p>
+                <h4 style="color:#B79A77">新進商品 </h4>
+            </div>
+            <div class="col-md-8 title col-xs-8 visible-xs down-xs  text-left">
+                <h4><strong>New 最近更新</strong></h4>
+            </div>
+            <div class="col-xs-8   down-xs  visible-xs text-left">
+                <h5 style="color:#B79A77"> 六月最新商品商品</h5>
+            </div>
+        </div>
+
+        <% @products.each_with_index do |product, index| %>
+          <% if(index%3 == 0)%>
+            <div class="row">
+          <% end %>
+            <div class="col-md-4 down-xl hidden-xs">
+                <%= link_to(product_path(product)) do %>
+                  <div class="pic"> 
+                    <%= image_tag('slideshow-m1.jpg', class: "watch_l_img") %>
+                  </div> 
+                  <!-- <img src="img/home03.png"> -->
+                  <h4 class="down-sm right-sm "> <%= product.title %> </h4>
+                <% end %>
+                <!-- <a href="detail.html"><h4 class="down-sm right-sm "> <%= product.title %> </h4>
+                        </a> -->
+                <h5 class="right-sm">#<%= product.number %> </h5>
+            </div>
+
+            <div class="row down-xl visible-xs">
                 <%= link_to(product_path(product)) do %>
                   <div class="phone_pic"> 
                     <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>

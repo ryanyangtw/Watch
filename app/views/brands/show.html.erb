@@ -33,9 +33,9 @@
           <h5 class="right-sm">#<%= product.number %></h5>
         </div>
 
-         <div class="col-xs-12 down-xl visible-xs">
+         <div class="col-xs-12 down-xs visible-xs">
           <%= link_to(product_path(product)) do %>
-            <div class="phone_pic"> 
+            <div class="phone_pic row"> 
               <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
             </div> 
             <h4 class="down-sm right-sm"> <%= product.title %> </h4>
@@ -51,6 +51,8 @@
       <% end %>
 
     <% end %>
+
+
 
 
     <div style = "text-align:center;">
