@@ -19,7 +19,7 @@
     init: function(settings){
       return this.each(function(){
         var config = {
-          slideDur: 7000,
+          slideDur: 5000,
           fadeDur: 800
         };
         if(settings){
@@ -113,11 +113,11 @@
 
 $(function(){
   $('#Fader').easyFader({
-    slideDur: 6000,
+    slideDur: 5000,
     fadeDur: 800
   });
   $('#Fader-m').easyFader({
-    slideDur: 6000,
+    slideDur: 5000,
     fadeDur: 800
   });
 });

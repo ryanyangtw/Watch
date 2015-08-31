@@ -3,4 +3,4 @@ function cycle(){
     $(this).prependTo('.slideshow').css({opacity:1});
   });
 }
-window.setInterval(cycle, 6000);
+window.setInterval(cycle, 5000);
