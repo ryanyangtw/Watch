@@ -42,12 +42,7 @@
                         <td><%= @product.title %> </td>
                     </tr>
                   <% end %>
-                  <% if @product.price? %>
-                    <tr>
-                        <td class="column">售價：</td>
-                        <td class="fuck-color"> <%= @product.price %> </td>
-                    </tr>
-                  <% end %>
+                  
                   <% if @product.status? %>
                     <tr>
                         <td class="column">狀況：</td>
@@ -97,7 +92,12 @@
                     </tr>
                   <% end %>
 
-                 
+                  <% if @product.price? %>
+                    <tr>
+                        <td class="column">售價：</td>
+                        <td class="fuck-color"> <%= @product.price %> </td>
+                    </tr>
+                  <% end %>
 
                 </table>
             </div>
