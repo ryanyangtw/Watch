@@ -28,11 +28,11 @@
               <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
             </div> 
 
-            <h5 class="right-sm">#<%= product.number %></h5>
+            <h5 class="right-xs">#<%= product.number %></h5>
 
-            <h4 class="down-sm right-sm"> <%= product.title %> </h4>
+            <h4 class="right-xs"> <%= product.title %> </h4>
 
-            <h5 class="right-sm fuck-color"> <%= product.price %> </h5>
+            <h4 class="right-xs">售價：<span class="fuck-color"> <%= product.price %></span> </h4>
           <% end %>
           <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
           
@@ -44,12 +44,16 @@
             <div class="phone_pic row"> 
               <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
             </div> 
-            <h4 class="down-sm right-sm"> <%= product.title %> </h4>
+            <h5 class="right-xs">#<%= product.number %></h5>
+
+            <h4 class="right-xs"> <%= product.title %> </h4>
+
+            <h4 class="right-xs">售價：<span class="fuck-color"> <%= product.price %></span> </h4>
 
             
           <% end %>
           <!-- <a href="detail.html"><h4 class="down-sm right-sm ">CHANEL陶瓷女用腕錶</h4></a> -->
-          <h5 class="right-sm">#<%= product.number %></h5>
+        
         </div>
       
       <% if(index%3 == 2 || index == @products.size - 1)%>
