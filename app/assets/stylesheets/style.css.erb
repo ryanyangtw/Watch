@@ -16,6 +16,14 @@ h3 {
 h4 {
     color: #5B5143;
     font-family: verdana;
+
+}
+
+.fuck-font {
+    font-size: 2.5rem;
+}
+.fuck-fuck-font {
+    font-size: 2rem;
 }
 
 h5 {
@@ -183,7 +191,7 @@ body {
     padding-left:27px;
     color: black;
     height: 30px;
-    width: 300px;
+    width: 280px;
 }
 
 .brand-list a ul li {}
@@ -228,7 +236,7 @@ body {
 
 .footer-logo {
     padding-top: 50px;
-    padding-bottom: 50px
+    padding-bottom: 35px
 }
 
 .rights {
@@ -259,12 +267,14 @@ body {
     background: url(<%= asset_path("bg2.jpg") %>) no-repeat center center;
     /*background: url('../img/brand04.png')no-repeat center center;*/
     width: 100%;
+    background-size: 100% 100%;
 }
 
 .bg-brand-m {
     background: url(<%= asset_path("slideshow-s2.jpg") %>) no-repeat center center;
     /*background: url('../img/brand04_m.png')no-repeat center center;*/
     width: 100%;
+    background-size: 100% 100%;
 }
 
 .container .inline h3 {
@@ -373,6 +383,7 @@ body {
     background: url(<%= asset_path("about01.png") %>) no-repeat center center;
     /*background: url('../img/about01.png')no-repeat center center;*/
     background-position: left top;
+    padding-left: 0px; padding-right: 0px;
 }
 
 .bg-map {
@@ -678,7 +689,7 @@ body {
 }
 
 .phone_pic {
-    height: 320px;
+    height: auto;
     overflow: hidden;
 
 }
@@ -712,6 +723,10 @@ td, th {
 }
 
 strong {
+    font-size: 3rem;
+}
+
+.p-strong {
     font-size: 2rem;
 }
 
@@ -722,6 +737,7 @@ strong {
 
 .fuck-color {color:#900000 ;}
 
+.add-margin {margin-right: -15px;margin-left: -15px;}
 
 @media screen and (max-device-width: 480px) {
     .fuck-slide{marign-left:-10px;margin-right: -10px;}    

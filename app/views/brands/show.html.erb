@@ -8,10 +8,10 @@
         <div class="col-md-8 title col-xs-12 hidden-xs  ">
             <h3><strong>BRAND 精選品牌</strong></h3>
             <p>||</p>
-            <h4 style="color:#B79A77"> <%= @brand.title %> <%= @brand.chinese_title %> </h4>
+            <h4 class="fuck-font" style="color:#B79A77"> <%= @brand.title %> <%= @brand.chinese_title %> </h4>
         </div>
-        <div class="col-md-8 title col-xs-8 visible-xs down-xs  text-left">
-            <h4><strong>BRAND 精選品牌</strong></h4>
+        <div class="col-md-8 title col-xs-10 visible-xs down-xs  text-left">
+            <h4><strong class="fuck-fuck-font">BRAND 精選品牌</strong></h4>
         </div>
         <div class="col-xs-8   down-xs  visible-xs text-left">
             <h5 style="color:#B79A77"> <%= @brand.title %> <%= @brand.chinese_title %></h5>
@@ -22,7 +22,7 @@
       <% if(index%3 == 0)%>
           <div class="row">
       <% end %>
-        <div class="col-md-4 down-xl hidden-xs">
+        <div class="col-md-4 down-sm hidden-xs">
           <%= link_to(product_path(product)) do %>
             <div class="pic"> 
               <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
@@ -43,6 +43,7 @@
           <%= link_to(product_path(product)) do %>
             <div class="phone_pic row"> 
               <%= image_tag(product.display_photo.try(:image_url), class: "watch_l_img") %>
+              <%# image_tag('home03.png', class: "watch_l_img") %>
             </div> 
             <h5 class="right-xs">#<%= product.number %></h5>
 

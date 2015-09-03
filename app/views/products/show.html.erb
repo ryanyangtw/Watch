@@ -9,11 +9,12 @@
                     <h4><%= @product.title %></h4>
                 </div>
             </div>
-            <div class="col-md-8 col-md-offset-2 col-xs-12 fuck-slide   down-sm">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 fuck-slide ">
                 <div id="Fader" class="fader-d">
   
                     <% @product.banners.order(id: :asc).each do |banner| %>
                       <%= image_tag(banner.image_url, class: "slide img-responsive") %>
+                      <%# image_tag('home03.png', class: "watch_l_img") %>
                     <% end %>
      
                     <div class="fader_controls text-center hidden-xs">
@@ -21,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-md-offset-4 hidden-xs  down-sm"></div>
+            <div class="col-md-4 col-md-offset-4 hidden-xs  "></div>
         </div>
        
         </div>
@@ -105,7 +106,7 @@
 
         <div class="col-md-6 down-sm col-xs-12">
           
-            <div class="col-md-12 col-xs-12" style="height:250px;">
+            <div class="col-md-12 col-xs-12" style="">
               <iframe style="border:none;" width="100%" height="100%" src="<%= @product.youtube_embed_url %>" ></iframe>
             </div>
             <div class="visible-xs col-xs-12" style="height:40px;"></div>

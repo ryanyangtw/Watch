@@ -57,7 +57,7 @@ window.gMapsCallback = function () {
             'interval': 200,
             'loading': '讀取中&hellip;',
             'notFound': '找不到查詢的地點',
-            'zoom': 8
+            'zoom': 6
         },
         styles = {},
         Label = {};
@@ -1194,7 +1194,7 @@ window.gMapsCallback = function () {
                     opts.pov = $.extend({}, {
                         'heading': 0,
                         'pitch'  : 0,
-                        'zoom'   : 1
+                        'zoom'   : 6
                     }, opts.pov);
                 }
                 if (opts.hasOwnProperty('visible')) {
